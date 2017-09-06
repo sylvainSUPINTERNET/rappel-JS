@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>exercice2</title>
+    <link href="exercice2.css" rel="stylesheet">
+</head>
+<body>
+    <h1 class="title">Mini game</h1>
+</body>
+
+<div class="container">
+
+<div class="circle" id="circle1">
+
+</div>
+
+<div class="circle" id="circle2">
+
+</div>
+
+<div class="circle" id="circle3">
+
+</div>
+
+<div class="circle" id="circle4">
+</div>
+
+</div>
+
+
+<script>
+    'use strict';
+
+    let circle = document.getElementsByClassName('circle');
+    let array = Array.from(circle); // convert en array pour utuliser ForEach
+
+    array.forEach(function(element) {
+        element.addEventListener('click',function(e){
+            console.log("you clicked " + element.id);
+            e.preventDefault();
+        });
+    });
+    console.log(circle);
+
+
+
+    randomTime = () => {
+
+    };
+
+
+</script>
+</html>
