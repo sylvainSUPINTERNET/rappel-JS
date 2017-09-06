@@ -12,6 +12,7 @@
 }
 
 .circle {
+    cursor: pointer;
     border-radius: 50%;
     padding : 10px;
     margin-bottom: 7px;
@@ -21,3 +22,7 @@
     display: inline-block;
 }
 
+
+#restart {
+    cursor: pointer;
+}
