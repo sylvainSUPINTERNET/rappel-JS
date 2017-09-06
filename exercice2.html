@@ -11,43 +11,99 @@
 
 <div class="container">
 
-<div class="circle" id="circle1">
+<div class="circle" id="1">
 
 </div>
 
-<div class="circle" id="circle2">
+<div class="circle" id="2">
 
 </div>
 
-<div class="circle" id="circle3">
+<div class="circle" id="3">
 
 </div>
 
-<div class="circle" id="circle4">
+<div class="circle" id="4">
 </div>
 
+    <button id="restart" value="recommencer !">recommencer!</button>
 </div>
 
+<h1 id="total">0</h1>
 
-<script>
+
+<script type="text/javascript">
     'use strict';
+
+
+
+    //Bug
+
+
+
+    function randomTime(){
+
+        //Refresh à chaque itteration du temps de toutes les couleurs
+        let circle = document.getElementsByClassName('circle');
+        array.forEach(function(element) {
+            element.style.background = "black";
+        });
+
+        return Math.floor(Math.random() * (5 - 1)) + 1;
+
+    }
+
+    function reloadF5(){
+
+        let total = document.getElementById('total');
+        return location.reload();
+    }
+
+
+    let testBasic = () => {
+        console.log("salut fleché");
+    };
+
+
+
+
+    window.setInterval(function(){
+        let lightinCircle = randomTime().toString();
+        let circleSelect = document.getElementById(lightinCircle);
+
+        circleSelect.style.background = "red";
+        console.log(lightinCircle);
+    },500);
+
+    let restart = document.getElementById("restart");
+
+
+    restart.addEventListener('click', function(e) {
+        reloadF5();
+    });
 
     let circle = document.getElementsByClassName('circle');
     let array = Array.from(circle); // convert en array pour utuliser ForEach
 
+
+    let total = 0;
+
+
     array.forEach(function(element) {
         element.addEventListener('click',function(e){
             console.log("you clicked " + element.id);
+            let win = element.style.background;
+            if(win === "red"){
+                total+=1;
+                document.getElementById('total').innerHTML = total;
+            }else{
+                console.log("ERREUR");
+            }
+            console.log(total);
             e.preventDefault();
         });
     });
     console.log(circle);
-
-
-
-    randomTime = () => {
-
-    };
 
 
 </script>
